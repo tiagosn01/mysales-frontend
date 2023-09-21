@@ -9,17 +9,38 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "20.6.2",
-    "@types/react": "18.2.22",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.15",
-    "eslint": "8.49.0",
-    "eslint-config-next": "13.5.1",
+    "@radix-ui/react-collapsible": "^1.0.3",
+    "@radix-ui/react-scroll-area": "^1.0.4",
+    "@radix-ui/react-select": "^1.2.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "axios": "^1.5.0",
+    "framer-motion": "^10.16.4",
+    "lucide-react": "^0.279.0",
     "next": "13.5.1",
-    "postcss": "8.4.30",
+    "nookies": "^2.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "react-world-flags": "^1.5.1",
+    "sweetalert2": "^11.7.28",
+    "sweetalert2-react-content": "^5.0.7",
+    "tailwind-merge": "^1.14.0",
+    "tailwind-variants": "^0.1.14"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.1.0",
+    "@tailwindcss/forms": "^0.5.6",
+    "@types/node": "^20.6.2",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-world-flags": "^1.4.2",
+    "autoprefixer": "^10.4.15",
+    "eslint": "8.42.0",
+    "eslint-config-next": "^13.5.1",
+    "postcss": "^8.4.30",
+    "prettier-plugin-tailwindcss": "0.4.1",
+    "tailwind-scrollbar": "^3.0.5",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
   }
 }
