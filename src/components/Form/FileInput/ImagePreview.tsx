@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
 'use client'
 
 import { User } from 'lucide-react'
