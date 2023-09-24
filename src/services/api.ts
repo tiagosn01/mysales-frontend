@@ -3,12 +3,15 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://app.mjtelecom.com.br/',
+  baseURL: 'http://13.48.1.191',
 })
 
 api.interceptors.request.use(async (config: any) => {
   const token = localStorage.getItem('@MjTele:token')
-  config.headers.Authorization = token ? `Bearer ${token}` : ''
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+
   return config
 })
 

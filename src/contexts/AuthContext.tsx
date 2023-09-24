@@ -1,6 +1,6 @@
 'use client'
 import { checkIsPublicRoute } from '@/utils/functions/check-route-is-public'
-import { usePathname, redirect } from 'next/navigation'
+import { redirect, usePathname } from 'next/navigation'
 import {
   createContext,
   useCallback,
@@ -19,10 +19,9 @@ interface AuthProviderProps {
 }
 
 interface UserData {
-  id: string
   name: string
   email: string
-  company_id: string
+  avatar: string
 }
 
 interface AuthData {
@@ -59,38 +58,43 @@ export function AuthProvider({ children }: AuthProviderProps) {
     return {} as AuthData
   })
 
-  const signIn = useCallback(async ({ email, password }: SignInCredencials) => {
-    try {
-      setLoading(true)
-      const response = await api.post('sessions', {
-        email,
-        password,
-      })
+  const signIn = useCallback(
+    async ({ email, password }: SignInCredencials) => {
+      try {
+        setLoading(true)
+        const response = await api.post('auth/login', {
+          email,
+          password,
+        })
+        const { token, avatar, name } = response.data
+        console.log(response.data)
 
-      const { token, user } = response.data
+        const user = { name, email: response.data.email, avatar }
 
-      storage?.setItem('@MjTele:token', token)
-      storage?.setItem('@MjTele:user', JSON.stringify(user))
+        storage?.setItem('@MjTele:token', token)
+        storage?.setItem('@MjTele:user', JSON.stringify(user))
 
-      setData({ token, user })
-      setLoading(false)
-    } catch (error) {
-      setLoading(false)
-      MySwal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Login ou senha incorretos!',
-        // footer: '<a href="">Why do I have this issue?</a>',
-      })
-    }
-  }, [])
-
+        setData({ token, user })
+        setLoading(false)
+      } catch (error) {
+        console.log(error)
+        setLoading(false)
+        MySwal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Login ou senha incorretos!',
+          // footer: '<a href="">Why do I have this issue?</a>',
+        })
+      }
+    },
+    [storage],
+  )
   const signOut = useCallback(() => {
     storage?.removeItem('@MjTele:token')
     storage?.removeItem('@MjTele:user')
 
     setData({} as AuthData)
-  }, [])
+  }, [storage])
 
   const userContext = useMemo(
     () => ({
@@ -112,10 +116,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
     } else if (!data.token && !isPublic) {
       redirect('/login')
     }
-  }, [data, isPublic])
+  }, [data.token, isPublic])
 
   return (
-    <AuthContext.Provider value={userContext}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={userContext}>
+      {!isPublic && !data.token ? (
+        <html lang="en">
+          <body></body>
+        </html>
+      ) : (
+        children
+      )}
+    </AuthContext.Provider>
   )
 }
 

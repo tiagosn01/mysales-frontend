@@ -15,9 +15,6 @@ export function Navigation() {
       <NavItem icon={Home} title="Home" path="/" />
       <NavItem icon={BarChart} title="Sales" path="/sales" />
       <NavItem icon={SquareStack} title="Clients" path="/clients" />
-      <NavItem icon={CheckSquare} title="Tasks" path="" />
-      <NavItem icon={Flag} title="Reporting" path="" />
-      <NavItem icon={Users} title="Users" path="" />
     </nav>
   )
 }

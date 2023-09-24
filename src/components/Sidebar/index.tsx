@@ -38,12 +38,7 @@ export function Sidebar() {
           <Navigation />
 
           <div className="mt-auto flex flex-col gap-6">
-            <nav className="flex flex-col gap-1">
-              <NavItem icon={LifeBuoy} title="Support" path="" />
-              <NavItem icon={Cog} title="Settings" path="" />
-            </nav>
-
-            <UsedSpaceWidget />
+            {/* <UsedSpaceWidget /> */}
             <div className="h-px bg-zinc-200 dark:bg-zinc-800" />
             <Profile />
           </div>

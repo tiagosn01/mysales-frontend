@@ -1,5 +1,6 @@
 'use client'
 import { Button } from '@/components/Button'
+import * as Input from '@/components/Form/Input'
 import { useAuth } from '@/contexts/AuthContext'
 import React, {
   ChangeEvent,
@@ -24,6 +25,7 @@ export default function Login() {
   }
 
   function onSubmit(e: FormEvent) {
+    console.log(email, password)
     e.preventDefault()
     signIn({ email, password })
   }
@@ -35,20 +37,27 @@ export default function Login() {
       <form
         onSubmit={onSubmit}
         id="login"
-        className=" border- flex w-2/4 flex-col gap-5 divide-y divide-zinc-200 dark:divide-zinc-800"
+        className=" border- flex w-1/4 flex-col gap-5 divide-y divide-zinc-200 dark:divide-zinc-800"
       >
-        <input
-          name="email"
-          type="email"
-          value={email}
-          onChange={handleChange}
-        />
-        <input
-          name="password"
-          type="password"
-          value={password}
-          onChange={handleChange}
-        />
+        <Input.Root>
+          <Input.Control
+            name="email"
+            type="email"
+            id="email"
+            value={email}
+            onChange={handleChange}
+          />
+        </Input.Root>
+
+        <Input.Root>
+          <Input.Control
+            id="password"
+            name="password"
+            type="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </Input.Root>
         <Button>Submit</Button>
       </form>
     </div>

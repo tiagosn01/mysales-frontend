@@ -7,25 +7,21 @@ import { Sidebar } from '@/components/Sidebar'
 import { usePathname } from 'next/navigation'
 import { checkIsPublicRoute } from '@/utils/functions/check-route-is-public'
 import { AppProvider } from '@/contexts'
-import { useAuth } from '@/contexts/AuthContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const { token } = useAuth()
   const pathName = usePathname()
   const isPublic = checkIsPublicRoute(pathName)
-  console.log(isPublic)
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <AppProvider>
-          {!isPublic && !token && null}
-          {isPublic && !token && (
+          {isPublic && (
             <div className="min-h-screen dark:bg-zinc-900">{children}</div>
           )}
-          {isPublic && token && (
+          {!isPublic && (
             <div className="relative min-h-screen dark:bg-zinc-900 lg:grid lg:grid-cols-app">
               <Sidebar />
 
