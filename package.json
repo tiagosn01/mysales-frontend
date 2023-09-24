@@ -22,7 +22,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-world-flags": "^1.5.1",
-    "sweetalert2": "^11.7.28",
+    "sweetalert2": "^11.6.13",
     "sweetalert2-react-content": "^5.0.7",
     "tailwind-merge": "^1.14.0",
     "tailwind-variants": "^0.1.14"
