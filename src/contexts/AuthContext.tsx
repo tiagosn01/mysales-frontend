@@ -11,8 +11,8 @@ import {
   useEffect,
 } from 'react'
 
-import api from '../services/api'
-import { MySwal } from '../utils/SweetAlert'
+import api from '@/services/api'
+import { MySwal } from '@/utils/sweetAlert'
 
 interface AuthProviderProps {
   children: ReactNode
