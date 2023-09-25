@@ -13,7 +13,7 @@ module.exports = {
       },
 
       colors: {
-        violet: {
+        orange: {
           25: '#FCFAFF',
         },
 

@@ -3,7 +3,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://13.48.1.191',
+  baseURL: 'https://api.sellevision.com.br/',
 })
 
 api.interceptors.request.use(async (config: any) => {

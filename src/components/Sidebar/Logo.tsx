@@ -233,15 +233,15 @@ export function Logo() {
             y2="10"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#53389E" />
-            <stop offset="1" stopColor="#6941C6" />
+            <stop stopColor="###ba6102" />
+            <stop offset="1" stopColor="##e68b29" />
           </linearGradient>
           <clipPath id="clip0_139_8616">
             <rect x="3" y="2" width="32" height="32" rx="8" fill="white" />
           </clipPath>
         </defs>
       </svg>
-      <span className="sr-only lg:not-sr-only">Untitled UI</span>
+      <span className="sr-only lg:not-sr-only">Sellevision</span>
     </strong>
   )
 }

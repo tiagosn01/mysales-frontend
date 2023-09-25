@@ -6,8 +6,8 @@ import { tv, VariantProps } from 'tailwind-variants'
 const fileItem = tv({
   slots: {
     base: 'group flex items-start gap-4 rounded-lg border border-zinc-200 p-4',
-    icon: 'relative rounded-full border-4 border-violet-100 bg-violet-200 p-2 text-violet-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-500',
-    deleteButton: 'text-zinc-500 hover:text-violet-500',
+    icon: 'relative rounded-full border-4 border-orange-100 bg-orange-200 p-2 text-orange-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-500',
+    deleteButton: 'text-zinc-500 hover:text-orange-500',
   },
   variants: {
     state: {
@@ -15,7 +15,7 @@ const fileItem = tv({
         base: 'dark:border-zinc-700',
       },
       complete: {
-        base: 'border-violet-500 dark:border-violet-300/20',
+        base: 'border-orange-500 dark:border-orange-300/20',
       },
       error: {
         base: 'bg-error-25 border-error-300 dark:bg-error-500/5 dark:border-error-500/30',
@@ -91,7 +91,7 @@ export function FileItem({ state, name, size, type }: FileItemProps) {
           <div className="flex w-full items-center gap-3">
             <div className="h-2 flex-1 rounded-full bg-zinc-100 dark:bg-zinc-600">
               <div
-                className="h-2 rounded-full bg-violet-600 dark:bg-violet-400"
+                className="h-2 rounded-full bg-orange-600 dark:bg-orange-400"
                 style={{ width: uploadProgress }}
               />
             </div>
@@ -103,7 +103,7 @@ export function FileItem({ state, name, size, type }: FileItemProps) {
       )}
 
       {state === 'complete' ? (
-        <CheckCircle2 className="h-5 w-5 fill-violet-600 text-white dark:fill-violet-300 dark:text-zinc-900" />
+        <CheckCircle2 className="h-5 w-5 fill-orange-600 text-white dark:fill-orange-300 dark:text-zinc-900" />
       ) : (
         <Button type="button" variant="ghost" className={deleteButton()}>
           <Trash2 className="h-5 w-5" />
