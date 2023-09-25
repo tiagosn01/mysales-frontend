@@ -44,6 +44,7 @@ export default function Login() {
         </div>
         <Input.Root>
           <Input.Control
+            placeholder="Email"
             name="email"
             type="email"
             id="email"
@@ -54,6 +55,7 @@ export default function Login() {
 
         <Input.Root>
           <Input.Control
+            placeholder="Senha"
             id="password"
             name="password"
             type="password"
