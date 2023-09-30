@@ -13,8 +13,8 @@ export function Navigation() {
   return (
     <nav className="flex flex-col gap-0.5">
       <NavItem icon={Home} title="Home" path="/" />
-      <NavItem icon={BarChart} title="Sales" path="/sales" />
-      <NavItem icon={SquareStack} title="Clients" path="/clients" />
+      <NavItem icon={BarChart} title="Vendas" path="/sales" />
+      <NavItem icon={SquareStack} title="Clientes" path="/clients" />
     </nav>
   )
 }

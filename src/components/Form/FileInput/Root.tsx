@@ -6,11 +6,13 @@ import {
   useContext,
   useId,
   useState,
+  useEffect,
 } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 export interface RootProps extends HTMLAttributes<HTMLDivElement> {
   multiple?: boolean
+  clearInput?: boolean
 }
 
 interface FileInputContextType {
@@ -22,9 +24,18 @@ interface FileInputContextType {
 
 const FileInputContext = createContext({} as FileInputContextType)
 
-export function Root({ multiple = false, id, ...props }: RootProps) {
+export function Root({
+  multiple = false,
+  id,
+  clearInput = false,
+  ...props
+}: RootProps) {
   const customId = useId()
   const [files, setFiles] = useState<File[]>([])
+
+  useEffect(() => {
+    setFiles([])
+  }, [clearInput])
 
   return (
     <FileInputContext.Provider

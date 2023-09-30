@@ -21,12 +21,12 @@ export function Trigger(props: TriggerProps) {
       <div className="flex flex-col items-center gap-1">
         <span className="text-sm">
           <span className="font-semibold text-orange-700 dark:text-orange-300">
-            Click to upload
+            Clique para importar
           </span>{' '}
-          or drag and drop
+          ou arraste e solte
         </span>
 
-        <span className="text-xs">SVG, PNG, JPG or GIF (max. 800x400px)</span>
+        <span className="text-xs">XLXS, XLS, CSV (max. 5mb)</span>
       </div>
     </label>
   )

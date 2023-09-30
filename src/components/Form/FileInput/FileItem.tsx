@@ -40,10 +40,10 @@ export function FileItem({ state, name, size, type }: FileItemProps) {
   const uploadProgress = state === 'complete' ? '100%' : '25%'
 
   const fileSize = useMemo(() => {
-    const fileSizeInKB = size / 1024
+    const fileSizeInKB = size / 5024
 
-    if (fileSizeInKB > 1024) {
-      const fileSizeInMB = fileSizeInKB / 1024
+    if (fileSizeInKB > 5024) {
+      const fileSizeInMB = fileSizeInKB / 5024
 
       return fileSizeInMB.toFixed(1).concat(' MB')
     }
@@ -63,7 +63,7 @@ export function FileItem({ state, name, size, type }: FileItemProps) {
         <div className="flex flex-1 flex-col items-start gap-1">
           <div className="flex flex-col leading-relaxed">
             <span className="text-sm font-medium text-error-700 dark:text-error-400">
-              Upload failed, please try again
+              Upload falhou, por favor tente novamente
             </span>
             <span className="text-sm text-error-600 dark:text-error-500">
               {name}
@@ -74,7 +74,7 @@ export function FileItem({ state, name, size, type }: FileItemProps) {
             type="button"
             className="text-sm font-semibold text-error-700 hover:text-error-900 dark:text-error-400 dark:hover:text-error-300"
           >
-            Try again
+            Tentar novamente
           </button>
         </div>
       ) : (

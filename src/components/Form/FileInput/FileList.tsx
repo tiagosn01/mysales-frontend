@@ -22,7 +22,7 @@ export function FileList(props: FileListProps) {
             name={file.name}
             size={file.size}
             type={file.type}
-            state="error"
+            state="complete"
           />
         )
       })}

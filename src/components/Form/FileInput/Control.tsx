@@ -24,7 +24,7 @@ export function Control(props: ControlProps) {
       id={id}
       type="file"
       className="sr-only"
-      onChange={handleFilesSelected}
+      onChange={props.onChange ? props.onChange : handleFilesSelected}
       multiple={multiple}
       {...props}
     />
