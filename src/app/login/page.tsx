@@ -63,7 +63,7 @@ export default function Login() {
             onChange={handleChange}
           />
         </Input.Root>
-        <Button>Entrar</Button>
+        <Button type="submit">Entrar</Button>
       </form>
     </div>
   )

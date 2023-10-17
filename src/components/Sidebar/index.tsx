@@ -1,12 +1,11 @@
 'use client'
 
-import { Search, LifeBuoy, Cog, Menu } from 'lucide-react'
+import { Search, Menu } from 'lucide-react'
 import * as Input from '../Form/Input'
 import { Logo } from './Logo'
 import { Profile } from './Profile'
 import { Navigation } from './Navigation'
 import { UsedSpaceWidget } from './UsedSpaceWidget'
-import { NavItem } from './Navigation/NavItem'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { Button } from '../Button'
 
@@ -38,7 +37,7 @@ export function Sidebar() {
           <Navigation />
 
           <div className="mt-auto flex flex-col gap-6">
-            {/* <UsedSpaceWidget /> */}
+            <UsedSpaceWidget />
             <div className="h-px bg-zinc-200 dark:bg-zinc-800" />
             <Profile />
           </div>

@@ -6,10 +6,10 @@ export function UsedSpaceWidget(props: UsedSpaceWidgetProps) {
     <div className="flex flex-col gap-4 rounded-lg bg-orange-50 px-4 py-5 dark:bg-zinc-800">
       <div className="flex flex-col gap-1">
         <span className="text-sm font-medium leading-5 text-orange-700 dark:text-zinc-100">
-          Used space
+          Espaço utilizado
         </span>
         <span className="text-sm leading-5 text-orange-500 dark:text-zinc-400">
-          Your team has used 20% of your available space. Need more?
+          Sua empresa ja utilizou 20% da capacidade.
         </span>
       </div>
 
@@ -22,14 +22,14 @@ export function UsedSpaceWidget(props: UsedSpaceWidgetProps) {
           type="button"
           className="text-sm font-medium text-orange-500 dark:text-orange-300"
         >
-          Dismiss
+          Esconder
         </button>
 
         <button
           type="button"
           className="text-sm font-medium text-orange-700 dark:text-zinc-300"
         >
-          Upgrade plan
+          Upgrade de plano
         </button>
       </div>
     </div>
