@@ -3,8 +3,8 @@
 import axios from 'axios'
 
 const api = axios.create({
-  // baseURL: 'https://api.sellevision.com.br/',
-  baseURL: 'http://localhost:8080/',
+  baseURL: 'https://api.sellevision.com.br/',
+  // baseURL: 'http://localhost:8080/',
 })
 
 api.interceptors.request.use(async (config: any) => {
