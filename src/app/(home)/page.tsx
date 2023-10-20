@@ -1,20 +1,36 @@
+'use client'
 import * as Input from '@/components/Form/Input'
 import * as FileInput from '@/components/Form/FileInput'
 import * as Select from '@/components/Form/Select'
 import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 import { Button } from '@/components/Button'
 import { Textarea } from '@/components/Form/Textarea'
-import { SettingsTabs } from './SettingsTabs'
+import { HomeTabs } from './HomesTabs'
 import { CountrySelect } from './CountrySelect'
+import { useEffect, useState } from 'react'
+import * as Tabs from '@radix-ui/react-tabs'
+import { useQuery } from 'react-query'
+import api from '@/services/api'
+import ClientTabContent from './components/ClientTabContent'
+import SaleTabContent from './components/SaleTabContent'
 
 export default function Home() {
+  const [currentTab, setCurrentTab] = useState('tab1')
+  const [clearForm, setClearForm] = useState(false)
+
+  console.log(currentTab)
+
   return (
     <>
       <h1 className="text-3xl font-medium text-zinc-900 dark:text-zinc-100">
         Home
       </h1>
 
-      {/* <SettingsTabs />
+      <HomeTabs currentTab={currentTab} setCurrentTab={setCurrentTab}>
+        <SaleTabContent value="tab1" />
+        <ClientTabContent value="tab2" />
+      </HomeTabs>
+      {/*
       <div className="mt-6 flex flex-col">
         <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
           <div className="flex flex-col gap-1">
