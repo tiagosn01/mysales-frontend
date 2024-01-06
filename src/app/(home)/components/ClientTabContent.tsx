@@ -9,7 +9,7 @@ type HomeTabsProps = {
 
 export default function ClientTabContent({ value }: HomeTabsProps) {
   const { data, isLoading } = useQuery('customers', () => {
-    return api.get('/customers').then((response) => response.data)
+    return api.get('/customers/count').then((response) => response.data)
   })
   return (
     <Tabs.TabsContent className="flex w-full" value={value}>
