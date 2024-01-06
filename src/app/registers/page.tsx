@@ -4,7 +4,6 @@ import * as Select from '@/components/Form/Select'
 import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 import { Button } from '@/components/Button'
 import { Textarea } from '@/components/Form/Textarea'
-import { SettingsTabs } from './SettingsTabs'
 
 export default function Registers() {
   return (
@@ -12,7 +11,6 @@ export default function Registers() {
       <h1 className="text-3xl font-medium text-zinc-900 dark:text-zinc-100">
         Cadastros
       </h1>
-      <SettingsTabs />
       <div className="mt-6 flex flex-col">
         <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
           <div className="flex flex-col gap-1">
