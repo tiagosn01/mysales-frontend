@@ -16,7 +16,7 @@ export default function ClientTabContent({ value }: HomeTabsProps) {
       {isLoading ? (
         <div>Carregando...</div>
       ) : (
-        <p>Total de clientes cadastrados: {data?.length}</p>
+        <p>Total de clientes cadastrados: {data}</p>
       )}
     </Tabs.TabsContent>
   )

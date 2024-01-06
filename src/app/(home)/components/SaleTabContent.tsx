@@ -9,14 +9,14 @@ type HomeTabsProps = {
 
 export default function SaleTabContent({ value }: HomeTabsProps) {
   const { data, isLoading } = useQuery('sales', () => {
-    return api.get('/sales').then((response) => response.data)
+    return api.get('/sales/count').then((response) => response.data)
   })
   return (
     <Tabs.TabsContent className="flex w-full" value={value}>
       {isLoading ? (
         <div>Carregando...</div>
       ) : (
-        <p>Total de vendas cadastradas: {data?.length}</p>
+        <p>Total de vendas cadastradas: {data}</p>
       )}
     </Tabs.TabsContent>
   )

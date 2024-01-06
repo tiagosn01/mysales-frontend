@@ -42,8 +42,6 @@ export default function Clients() {
   } = useForm<Inputs>()
   async function onSubmit(data: Inputs) {
     try {
-      console.log('submit')
-
       await api.post('/customers', data)
       setClearForm(!clearForm)
 

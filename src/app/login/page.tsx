@@ -17,20 +17,20 @@ export default function Login() {
     password: '',
   })
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target
+  function handleChange(e: ChangeEvent<HTMLInputElement>): void {
+    const { value, name } = e.target
     setFormData({
       ...formData,
       [name]: value,
     })
   }
 
+  const { email, password } = formData
+
   function onSubmit(e: FormEvent) {
     e.preventDefault()
     signIn({ email, password })
   }
-
-  const { email, password } = formData
 
   return (
     <div className="max-w-screen flex min-h-screen items-center justify-center bg-slate-200 px-4 pb-12 pt-24 lg:col-start-2 lg:w-auto lg:px-8 lg:pt-8">
@@ -50,6 +50,7 @@ export default function Login() {
             id="email"
             value={email}
             onChange={handleChange}
+            required
           />
         </Input.Root>
 
@@ -61,6 +62,7 @@ export default function Login() {
             type="password"
             value={password}
             onChange={handleChange}
+            required
           />
         </Input.Root>
         <Button type="submit">Entrar</Button>
