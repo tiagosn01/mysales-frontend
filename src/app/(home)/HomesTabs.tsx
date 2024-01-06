@@ -1,7 +1,7 @@
 'use client'
 
 import { ReactNode } from 'react'
-import { TabItem } from '@/components/TabItem'
+import { TabItem } from '@/components/Tabs/TabItem'
 import * as Tabs from '@radix-ui/react-tabs'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 

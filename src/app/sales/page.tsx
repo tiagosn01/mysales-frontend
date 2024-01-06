@@ -1,7 +1,7 @@
 'use client'
 import { Button } from '@/components/Button'
 import React, { useState } from 'react'
-import { SettingsTabs } from './SettingsTabs'
+import { SettingsTabs } from '@/components/Tabs/SettingTabs'
 import * as FileInput from '@/components/Form/FileInput'
 import * as Tabs from '@radix-ui/react-tabs'
 import api from '@/services/api'
@@ -10,7 +10,8 @@ import * as Input from '@/components/Form/Input'
 import { useForm } from 'react-hook-form'
 
 export default function Sales() {
-  const [currentTab, setCurrentTab] = useState('tab1')
+  const titles = ['Cadastrar', 'Importar']
+  const [currentTab, setCurrentTab] = useState(titles[0])
   const [clearForm, setClearForm] = useState(false)
 
   type Inputs = {
@@ -32,6 +33,7 @@ export default function Sales() {
     watch,
     formState: { errors },
   } = useForm<Inputs>()
+
   async function onSubmit(data: Inputs) {
     try {
       console.log('submit')
@@ -98,8 +100,12 @@ export default function Sales() {
         Vendas
       </h1>
 
-      <SettingsTabs currentTab={currentTab} setCurrentTab={setCurrentTab}>
-        <Tabs.TabsContent className="flex w-full" value="tab1">
+      <SettingsTabs
+        currentTab={currentTab}
+        setCurrentTab={setCurrentTab}
+        titles={titles}
+      >
+        <Tabs.TabsContent className="flex w-full" value={titles[0]}>
           <form
             id="registerClients"
             onSubmit={handleSubmit(onSubmit)}
@@ -266,7 +272,7 @@ export default function Sales() {
             </div>
           </form>
         </Tabs.TabsContent>
-        <Tabs.TabsContent className="flex w-full" value="tab2">
+        <Tabs.TabsContent className="flex w-full" value={titles[1]}>
           <form
             id="importClients"
             className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200 dark:divide-zinc-800"

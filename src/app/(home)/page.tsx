@@ -1,16 +1,8 @@
 'use client'
-import * as Input from '@/components/Form/Input'
-import * as FileInput from '@/components/Form/FileInput'
-import * as Select from '@/components/Form/Select'
-import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
-import { Button } from '@/components/Button'
-import { Textarea } from '@/components/Form/Textarea'
 import { HomeTabs } from './HomesTabs'
-import { CountrySelect } from './CountrySelect'
+
 import { useEffect, useState } from 'react'
-import * as Tabs from '@radix-ui/react-tabs'
-import { useQuery } from 'react-query'
-import api from '@/services/api'
+
 import ClientTabContent from './components/ClientTabContent'
 import SaleTabContent from './components/SaleTabContent'
 

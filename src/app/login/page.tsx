@@ -33,40 +33,42 @@ export default function Login() {
   }
 
   return (
-    <div className="max-w-screen flex min-h-screen items-center justify-center bg-slate-200 px-4 pb-12 pt-24 lg:col-start-2 lg:w-auto lg:px-8 lg:pt-8">
-      <form
-        onSubmit={onSubmit}
-        id="login"
-        className="flex w-full max-w-md flex-col gap-5 divide-y divide-zinc-200 bg-slate-50 dark:divide-zinc-800 md:max-w-lg md:rounded md:border md:px-6 md:py-14 md:shadow-md"
-      >
-        <div className="mb-10 flex w-full items-center justify-center">
-          <Logo />
-        </div>
-        <Input.Root>
-          <Input.Control
-            placeholder="Email"
-            name="email"
-            type="email"
-            id="email"
-            value={email}
-            onChange={handleChange}
-            required
-          />
-        </Input.Root>
+    <div className="max-w-screen flex-1 bg-gray-100 px-4 pb-12 lg:col-start-2 lg:w-auto lg:px-8 lg:pt-8">
+      <div className="mt-24 flex items-center justify-center self-center">
+        <form
+          onSubmit={onSubmit}
+          id="login"
+          className="flex w-full max-w-md flex-col gap-5 divide-y divide-zinc-200 bg-slate-50 dark:divide-zinc-800 md:max-w-lg md:rounded md:border md:px-6 md:py-14 md:shadow-md"
+        >
+          <div className="mb-10 flex w-full items-center justify-center">
+            <Logo />
+          </div>
+          <Input.Root>
+            <Input.Control
+              placeholder="Email"
+              name="email"
+              type="email"
+              id="email"
+              value={email}
+              onChange={handleChange}
+              required
+            />
+          </Input.Root>
 
-        <Input.Root>
-          <Input.Control
-            placeholder="Senha"
-            id="password"
-            name="password"
-            type="password"
-            value={password}
-            onChange={handleChange}
-            required
-          />
-        </Input.Root>
-        <Button type="submit">Entrar</Button>
-      </form>
+          <Input.Root>
+            <Input.Control
+              placeholder="Senha"
+              id="password"
+              name="password"
+              type="password"
+              value={password}
+              onChange={handleChange}
+              required
+            />
+          </Input.Root>
+          <Button type="submit">Entrar</Button>
+        </form>
+      </div>
     </div>
   )
 }

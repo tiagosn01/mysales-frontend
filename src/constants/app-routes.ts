@@ -13,5 +13,6 @@ export const APP_ROUTES = {
   public: {
     login: '/login',
     signup: '/signup',
+    landing: '/landing',
   },
 }

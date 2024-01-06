@@ -113,7 +113,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     if (data.token && isPublic) {
       redirect('/')
     } else if (!data.token && !isPublic) {
-      redirect('/login')
+      redirect('/landing')
     }
   }, [data.token, isPublic])
 

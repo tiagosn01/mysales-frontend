@@ -1,37 +1,36 @@
 'use client'
 
-import { ChangeEvent, ReactNode, useState } from 'react'
-import { TabItem } from '@/components/TabItem'
+import { ReactNode } from 'react'
+import { TabItem } from './TabItem'
 import * as Tabs from '@radix-ui/react-tabs'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
-import * as FileInput from '@/components/Form/FileInput'
 
 type SettingsTabsProps = {
   currentTab: string
   setCurrentTab: (e: string) => void
   children: ReactNode
+  titles: string[]
 }
 
 export function SettingsTabs({
   currentTab,
   setCurrentTab,
   children,
+  titles,
 }: SettingsTabsProps) {
   return (
     <Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
       <ScrollArea.Root className="w-full" type="hover">
         <ScrollArea.Viewport className="w-full overflow-x-scroll">
           <Tabs.List className="mt-6 flex w-full items-center gap-4 border-b border-zinc-200 dark:border-zinc-800">
-            <TabItem
-              isSelected={currentTab === 'tab1'}
-              value="tab1"
-              title="Cadastros"
-            />
-            <TabItem
-              isSelected={currentTab === 'tab2'}
-              value="tab2"
-              title="Importar"
-            />
+            {titles.map((title, index) => (
+              <TabItem
+                key={index}
+                isSelected={currentTab === titles[index]}
+                value={titles[index]}
+                title={title}
+              />
+            ))}
           </Tabs.List>
           {children}
         </ScrollArea.Viewport>
